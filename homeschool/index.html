@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>家校互联</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+      var dpr, rem, scale
+      var docEl = document.documentElement
+      var fontEl = document.createElement('style')
+      var metaEl = document.querySelector('meta[name="viewport"]')
+      dpr = window.devicePixelRatio || 1
+      function makeFontSize() {
+        if (docEl.clientWidth == 0) {
+          setTimeout(makeFontSize, 5)
+          return
+        }
+        var w = docEl.clientWidth > 750 ? 750 : docEl.clientWidth
+        rem = (w * dpr) / 7.5
+        scale = 1 / dpr
+        docEl.setAttribute('data-dpr', dpr)
+        docEl.firstElementChild.appendChild(fontEl)
+        fontEl.innerHTML = 'html{font-size:' + rem / dpr + 'px!important;overflow-x: hidden;}'
+      }
+      makeFontSize()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

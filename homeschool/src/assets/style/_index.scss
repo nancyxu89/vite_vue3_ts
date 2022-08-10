@@ -1,0 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+input {
+  box-sizing: border-box;
+}
+body {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* mobile viewport bug fix */
+  height: -webkit-fill-available;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  min-width: 320px;
+  background: #F2F2F2;
+}
+
+
+html {
+  height: -webkit-fill-available;
+}
